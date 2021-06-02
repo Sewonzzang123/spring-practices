@@ -8,8 +8,7 @@
 </head>
 <body>
 	<h1>hello world3</h1>
-<%String name = (String)request.getAttribute("name"); %>
-<%=name %>
+${name }
 	
 </body>
 </html>
