@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
+<!--  appender의 갯수는 3개 console, file2, file3 
+	file2, 3 /logex/logex2.log,3log파일을 드라이브쪽에서 찾아 볼 수 있다.
+	rolling policy : 1번부터 10번까지 ,50KB를 넘게 되면 ZIP
+-->
 	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<charset>UTF-8</charset>
@@ -17,6 +20,7 @@
 				%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
 			</Pattern>
 		</encoder>
+
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
 			<FileNamePattern>/logex/logex2.%i.log.zip</FileNamePattern>
 			<MinIndex>1</MinIndex>
@@ -49,6 +53,8 @@
 
 	<!--
 		com.douzone.logex2 아래 패키지 로그들만  \logex\logex2.log 파일에만  출력하는 로거
+		debug>info>warn>error 순으로 레벨이 되어 있음.
+		level 이 debug면 전부 다 나오게 되어있음
 	-->
 	<logger name="com.douzone.logex2" level="debug" additivity="false">
             <appender-ref ref="fileAppender2" />
@@ -63,7 +69,7 @@
     </logger>    
 	
 	<!-- 루트(글로벌) 로거 -->
-	<root level="debug">
+	<root level="error">
 		<appender-ref ref="consoleAppender" />
 	</root>
 
