@@ -2,6 +2,7 @@ package com.douzone.fileupload.service;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Calendar;
 
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FileUploadService {
 	private static final String SAVE_PATH = "/uploads-mysite";
+	private static final String URL_BASE = "/images";
 
 	public String restore(MultipartFile file) {
 		String url = "";
@@ -22,12 +24,15 @@ public class FileUploadService {
 			String extName = originFilename.substring(originFilename.lastIndexOf('.')+1);
 			String saveFilename = generateSaveFilename(extName);
 			long fileSize = file.getSize();
+			
 			System.out.println("============================" + originFilename);
 			System.out.println("============================" + fileSize);
 			System.out.println("============================" + saveFilename);
 
 			byte[] data = file.getBytes();
-			new FileOutputStream(SAVE_PATH + "/" + saveFilename).write(data);
+			OutputStream os = new FileOutputStream(SAVE_PATH + "/" + saveFilename);
+			os.write(data);
+			url = URL_BASE+"/"+saveFilename;
 			
 		} catch (IOException e) {
 			throw new RuntimeException("file unpload error" + e);

@@ -1,5 +1,6 @@
 package com.douzone.fileupload.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +28,10 @@ public class FileUploadController {
 			Model model) {		
 //		@RequestParam("file") MultipartFile[] files
 		System.out.println("email : "+email);
-		
+//		String url = fileUploadService.restore(file1);
 		String url = new FileUploadService().restore(file1);
 		model.addAttribute("url", url);
+
 		
 		return "/WEB-INF/views/result.jsp";
 	}
