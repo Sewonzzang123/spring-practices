@@ -44,11 +44,10 @@ public class MyAspect {
 
 		// pointcut method 실행
 		// 파라미터 가로채기
-		Object[] parameter = { "Camera" };
+//		Object[] parameter = { "Camera" };
+//		Object result = pjp.proceed(parameter);
 
-		Object result = pjp.proceed(parameter);
-
-//		Object result = pjp.proceed();
+		Object result = pjp.proceed();
 
 		// after advice
 		System.out.println("around-after advice");
