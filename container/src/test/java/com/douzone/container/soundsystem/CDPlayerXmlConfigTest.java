@@ -13,7 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations= {"classpath:com/douzone/container/config/soundsystem"})
+@ContextConfiguration(locations= {"classpath:com/douzone/container/config/soundsystem/CDPlayerConfig.xml"})
 public class CDPlayerXmlConfigTest {
 	@Rule
 	public final SystemOutRule systemOutRule =  new SystemOutRule().enableLog();
@@ -22,12 +22,13 @@ public class CDPlayerXmlConfigTest {
 	private CDPlayer cdPlayer;
 	
 	@Test
-	@Ignore
+//	@Ignore
 	public void testCDPlayerNotNull() {
 		assertNotNull(cdPlayer);
 	}
 	
 	@Test
+	@Ignore
 	public void testPlay() {
 		//화면출력되는 것도 assert 해야 자동화를 할 수 있겠지
 		cdPlayer.play();
