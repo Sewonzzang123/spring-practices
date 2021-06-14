@@ -8,6 +8,7 @@ public class BlankDisc implements DigitalVideoDisc {
 	private String studio;
 	private List<String> actors;
 	
+	
 	public BlankDisc() {}
 	public BlankDisc(String title, String studio) {
 		this.title = title;

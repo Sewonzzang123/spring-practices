@@ -1,5 +1,6 @@
 package com.douzone.container.videosystem;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Ignore;
@@ -50,7 +51,7 @@ public class DVDPlayerXmlConfigTest {
 	}
 	
 	@Autowired
-	@Qualifier("avengersEndGame")
+	@Qualifier("avengersEndgame")
 	private DigitalVideoDisc dvd4;
 	
 	@Test
@@ -58,15 +59,15 @@ public class DVDPlayerXmlConfigTest {
 		assertNotNull(dvd4);
 	}
 	
-//	@Autowired
-//	@Qualifier("avengersAgeOfUltron")
-//	private DigitalVideoDisc dvd5;
-//	
-//	@Test
-//	public void testDVD5() {
-//		assertNotNull(dvd5);
-//	}
-//	
+	@Autowired
+	@Qualifier("avengersAgeOfUltron")
+	private DigitalVideoDisc dvd5;
+	
+	@Test
+	public void testDVD5() {
+		assertNotNull(dvd5);
+	}
+	
 	@Autowired
 	@Qualifier("captainAmerica")
 	private DigitalVideoDisc dvd6;
@@ -120,6 +121,54 @@ public class DVDPlayerXmlConfigTest {
 		assertNotNull(dvd10);
 	}
 	
+	@Autowired
+	@Qualifier("dvdPlayer1")
+	private DVDPlayer player1;
 	
+	@Test
+	public void testPlay1() {
+		player1.play();
+		assertEquals("[ playing Movie MARVEL's IronMan ]",systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
+	
+	@Autowired
+	@Qualifier("dvdPlayer2")
+	private DVDPlayer player2;
+	
+	@Test
+	public void testPlay2() {
+		player2.play();
+		assertEquals("[ playing Movie MARVEL's IronMan ]",systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
+	
+	@Autowired
+	@Qualifier("dvdPlayer3")
+	private DVDPlayer player3;
+	
+	@Test
+	public void testPlay3() {
+		player3.play();
+		assertEquals("[ playing Movie MARVEL's IronMan ]",systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
+	
+	@Autowired
+	@Qualifier("dvdPlayer4")
+	private DVDPlayer player4;
+	
+	@Test
+	public void testPlay4() {
+		player4.play();
+		assertEquals("[ playing Movie MARVEL's Avengers DirectorEdition ]",systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
+	
+	@Autowired
+	@Qualifier("dvdPlayer5")
+	private DVDPlayer player5;
+	
+	@Test
+	public void testPlay5() {
+		player5.play();
+		assertEquals("[ playing Movie MARVEL's Avengers DirectorEdition ]",systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	}
 	
 }

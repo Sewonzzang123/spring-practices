@@ -20,115 +20,153 @@
 	<bean class="com.douzone.container.videosystem.Avengers" />
 
 	<!-- 2. 설정된 빈에 아이디 부여하기 -->
-	<bean id="ironMan" class="com.douzone.container.videosystem.IronMan" />
+	<bean id="ironMan"
+		class="com.douzone.container.videosystem.IronMan" />
 
-	<!-- 3. 빈 설정 - 생성자 리터럴 사용 1 -->
-	<bean id="avengersInfinityWar" class="com.douzone.container.videosystem.BlankDisc">
-		<constructor-arg name="title" value="Avengers InfinityWar" />
+	<!-- 3. 빈 설정 - 생성자 리터럴 사용 1  -->
+	<bean id="avengersInfinityWar"
+		class="com.douzone.container.videosystem.BlankDisc">
+		<constructor-arg name="title"
+			value="Avengers InfinityWar" />
 		<constructor-arg name="studio" value="MARVEL" />
 	</bean>
-	
+
 	<!-- 4. 빈 설정 - 생성자 리터럴 사용2 -->
-	<bean id="avengersEndgame" class="com.douzone.container.videosystem.BlankDisc"
-		c:title="Avengers Endgame"
-		c:studio="MARVEL" />
-		
-		
+	<bean id="avengersEndgame"
+		class="com.douzone.container.videosystem.BlankDisc"
+		c:title="Avengers Endgame" c:studio="MARVEL" />
+
+
 	<!-- 5. 빈 설정 - 생성자 인덱스 사용 -->
 	<bean id="avengersAgeOfUltron"
-		class="com.douzone.container.videosystem.BlankDisc" 
-		c:_0="Avengers AgeOfUltron"
-		c:_1="MARVEL" />
-	
-	
+		class="com.douzone.container.videosystem.BlankDisc"
+		c:_0="Avengers AgeOfUltron" c:_1="MARVEL" />
+
+
 	<!-- 6. 빈 설정 - 생성자 리터럴 사용 2 -->
-	<bean id="captainAmerica" class="com.douzone.container.videosystem.BlankDisc">
-		<constructor-arg name="title" value="Avengers CaptainAmerica" />
+	<bean id="captainAmerica"
+		class="com.douzone.container.videosystem.BlankDisc">
+		<constructor-arg name="title"
+			value="Avengers CaptainAmerica" />
 		<constructor-arg name="studio" value="MARVEL" />
-		<constructor-arg name="actors"><null /></constructor-arg>
+		<constructor-arg name="actors">
+			<null />
+		</constructor-arg>
 	</bean>
-	
+
 	<!-- 7. 빈 설정 - 생성자 collection argument -->
-	<bean id="avengersDirectorEdition" class="com.douzone.container.videosystem.BlankDisc">
-		<constructor-arg name="title" value="Avengers DirectorEdition" />
+	<bean id="avengersDirectorEdition"
+		class="com.douzone.container.videosystem.BlankDisc">
+		<constructor-arg name="title"
+			value="Avengers DirectorEdition" />
 		<constructor-arg name="studio" value="MARVEL" />
 		<constructor-arg name="actors">
 			<list>
 				<value>Robert Downey Jr.</value>
 				<value>Scalett</value>
-				<value>Chris Evans</value>			
+				<value>Chris Evans</value>
 			</list>
 		</constructor-arg>
 	</bean>
-	
+
 	<!-- 8. 빈 설정 - 생성자 wiring collection -->
-		<bean id="avengersTriplepack" class="com.douzone.container.videosystem.DVDPack">
-		<constructor-arg name="title" value="Avengers Triplepack" />
+	<bean id="avengersTriplepack"
+		class="com.douzone.container.videosystem.DVDPack">
+		<constructor-arg name="title"
+			value="Avengers Triplepack" />
 		<constructor-arg name="dvds">
 			<list>
-				<ref bean="ironMan" />	
-				<ref bean="avengersInfinityWar" />	
-				<ref bean="avengersEndGame" />	
+				<ref bean="ironMan" />
+				<ref bean="avengersInfinityWar" />
+				<ref bean="captainAmerica" />
 			</list>
 		</constructor-arg>
 	</bean>
 
 	<!-- 9. 빈 설정 - 프로퍼티를 통한 빈 초기화 1 -->
-	<bean id="avengersExpansionPack1" class="com.douzone.container.videosystem.BlankDisc">
+	<bean id="avengersExpansionPack1"
+		class="com.douzone.container.videosystem.BlankDisc">
 		<property name="title" value="Avengers Expansion Pack1" />
 		<property name="studio" value="MARVEL" />
 		<property name="actors">
 			<list>
 				<value>Robert Downey Jr.</value>
 				<value>Scalett</value>
-				<value>Chris Evans</value>			
+				<value>Chris Evans</value>
 			</list>
 		</property>
 	</bean>
-	
-	<!-- 10. 빈 설정 - 프로퍼티를 통한 빈 초기화 2 p:-->
-	<bean id="avengersExpansionPack2" class="com.douzone.container.videosystem.BlankDisc"
-		p:title="Avengers Expansion Pack2" 
-		p:studio="MARVEL" >
+
+	<!-- 10. 빈 설정 - 프로퍼티를 통한 빈 초기화 2 p: -->
+	<bean id="avengersExpansionPack2"
+		class="com.douzone.container.videosystem.BlankDisc"
+		p:title="Avengers Expansion Pack2" p:studio="MARVEL">
 		<property name="actors">
 			<list>
 				<value>Robert Downey Jr.</value>
 				<value>Scalett</value>
-				<value>Chris Evans</value>			
+				<value>Chris Evans</value>
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- 11. 빈 설정 - 프로퍼티를 통한 빈 초기화 3 -->
 	<util:list id="actorList">
 		<value>Robert Downey Jr.</value>
 		<value>Scalett</value>
-		<value>Chris Evans</value>	
+		<value>Chris Evans</value>
 	</util:list>
-	
-	<bean id="avengersExpansionPack3" class="com.douzone.container.videosystem.BlankDisc"
-		p:title="Avengers Expansion Pack3" 
-		p:studio="MARVEL" 
+
+	<bean id="avengersExpansionPack3"
+		class="com.douzone.container.videosystem.BlankDisc"
+		p:title="Avengers Expansion Pack3" p:studio="MARVEL"
 		p:actors="actorList" />
-		
+
+	<!-- 12. 생성자를 통한 빈 주입1 -->
+	<bean id="dvdPlayer1"
+		class="com.douzone.container.videosystem.DVDPlayer">
+		<constructor-arg ref="ironMan" />
+	</bean>
+
+	<!-- 12. 생성자를 통한 빈 주입2 c-namespace의 arugment name을 사용하는 방법 (Spring 3.x 부터 
+		지원) -->
+	<bean id="dvdPlayer2"
+		class="com.douzone.container.videosystem.DVDPlayer"
+		c:dvd-ref="ironMan" />
+
+	<!-- 12. 생성자를 통한 빈 주입3 c-namespace의 index 를 사용 -->
+	<bean id="dvdPlayer3"
+		class="com.douzone.container.videosystem.DVDPlayer" c:_0-ref="ironMan" />
+
+	<!-- 12. 생성자를 통한 빈 주입4 c-namespace의 index 를 사용 -->
+	<bean id="dvdPlayer4"
+		class="com.douzone.container.videosystem.DVDPlayer">
+		<property name="dvd" ref="avengersDirectorEdition" />
+	</bean>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<!-- 12. 생성자를 통한 빈 주입5 p:namespace -->
+	<bean id="dvdPlayer5"
+		class="com.douzone.container.videosystem.DVDPlayer" 
+		p:dvd-ref="avengersDirectorEdition" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </beans>
