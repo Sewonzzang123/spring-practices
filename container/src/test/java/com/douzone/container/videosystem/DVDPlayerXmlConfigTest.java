@@ -34,8 +34,92 @@ public class DVDPlayerXmlConfigTest {
 	@Qualifier("ironMan")
 	private DigitalVideoDisc dvd2;
 
+	
 	@Test
 	public void testDVD2() {
 		assertNotNull(dvd2);
 	}
+	
+	@Autowired
+	@Qualifier("avengersInfinityWar")
+	private DigitalVideoDisc dvd3;
+	
+	@Test
+	public void testDVD3() {
+		assertNotNull(dvd3);
+	}
+	
+	@Autowired
+	@Qualifier("avengersEndGame")
+	private DigitalVideoDisc dvd4;
+	
+	@Test
+	public void testDVD4() {
+		assertNotNull(dvd4);
+	}
+	
+//	@Autowired
+//	@Qualifier("avengersAgeOfUltron")
+//	private DigitalVideoDisc dvd5;
+//	
+//	@Test
+//	public void testDVD5() {
+//		assertNotNull(dvd5);
+//	}
+//	
+	@Autowired
+	@Qualifier("captainAmerica")
+	private DigitalVideoDisc dvd6;
+	
+	@Test
+	public void testDVD6() {
+		assertNotNull(dvd6);
+	}
+	
+	@Autowired
+	@Qualifier("avengersDirectorEdition")
+	private DigitalVideoDisc dvd7;
+	
+	@Test
+	public void testDVD7() {
+		assertNotNull(dvd7);
+	}
+	
+	@Autowired
+	@Qualifier("avengersTriplepack")
+	private DVDPack dvdPack;
+	
+	@Test
+	public void testPack() {
+		assertNotNull(dvdPack);
+	}
+	
+	@Autowired
+	@Qualifier("avengersExpansionPack1")
+	private DigitalVideoDisc dvd8;
+	
+	@Test
+	public void testDVD8() {
+		assertNotNull(dvd8);
+	}
+	
+	@Autowired
+	@Qualifier("avengersExpansionPack2")
+	private DigitalVideoDisc dvd9;
+	
+	@Test
+	public void testDVD9() {
+		assertNotNull(dvd9);
+	}
+	@Autowired
+	@Qualifier("avengersExpansionPack3")
+	private DigitalVideoDisc dvd10;
+	
+	@Test
+	public void testDVD10() {
+		assertNotNull(dvd10);
+	}
+	
+	
+	
 }
