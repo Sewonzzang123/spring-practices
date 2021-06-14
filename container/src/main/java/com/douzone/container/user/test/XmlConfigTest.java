@@ -14,7 +14,7 @@ public class XmlConfigTest {
 
 	public static void main(String[] args) {
 		// XML 의 Auto Configuration(Annotation Scanning)
-		// testBeanFactory01();
+		 testBeanFactory01();
 
 		// XML Bean Configuration(Explicit Configuration)명시적으로 설정한다..
 		// testBeanFactory02();
@@ -23,7 +23,7 @@ public class XmlConfigTest {
 		// testApplicationContext01();
 
 		// XML Bean Configuration(Explicit Configuration)명시적으로 설정한다..
-		testApplicationContext02();
+//		testApplicationContext02();
 	}
 
 	// XML 의 Auto Configuration(Annotation Scanning)
