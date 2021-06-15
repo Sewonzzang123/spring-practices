@@ -22,7 +22,7 @@ import com.douzone.container.videosystem.DigitalVideoDisc;
 @Configuration
 @Import({DVDConfig.class})
 public class DVDPlayerConfig {
-	@Bean							// blank dist 주입
+	@Bean							// blank disk 주입
 	public DVDPlayer dvdPlayer(@Qualifier("avengersInfinityWar") DigitalVideoDisc disc) {
 		return new DVDPlayer(disc);
 	}
