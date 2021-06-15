@@ -32,7 +32,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
 		</dependency>
 		<!-- 화면 출력 내용을 String으로 출력 -->
 		<dependency>
